@@ -1,15 +1,28 @@
 <!doctype html>
 <html>
-<head>  
+<head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
-    <title>Jmol Surfaces Demo (Copied Test)</title>
+    <title>JSmol Viewer</title>
 
     <!-- CSS stylesheets externalized -->
     <link rel="stylesheet" href="./jquery/jquery-ui.css" type="text/css" charset="utf-8" />
     <link rel="stylesheet" href="./jmol_surfaces.css" type="text/css" charset="utf-8"/>
 </head>
 <body>
-<h1>Jmol Demo</h1>
+<h2>CHEM 4300: Homework 9</h2>
+<h1>N<sub>2</sub> Molecular Orbital Visualization</h1>
+
+<p>
+    In the Python code, you defined a dinitrogen (N<sub>2</sub>) molecule and calculated its total energy and molecular orbital energies.
+    Although it wasn't printed at the end, the <code>mf.kernel()</code> function also computed the molecular orbitals using the given basis functions specified by <code>mol.basis</code>.
+    In this applet, you will have the chance to visualize these molecular orbitals.
+</p>
+<ul>
+    <li>Basis set size dependence (maybe: same number of occupied orbitals but tons more virtual)</li>
+    <li>isosurface values</li>
+    <li>Assign orbitals to an MO diagram</li>
+    <li>R dependence?</li>
+</ul>
 
 <div id='commands'>
   <ul><!-- The tab headers -->
@@ -19,17 +32,19 @@
 
   <div id="jcmd-3"> <!-- Content of Tab Jmol 3 -->
   <ol>
-    <li>1) Load an example file:</li>
-    <li><div class="jmolscript">load "mol/methanol.log" ; frame 2</div></li>
+    <li>1) Load file:</li>
+    <li><div class="jmolscript">load files mol/chem4300_N2_321G.molden</div></li>
     <li>&nbsp;</li>
-    <li>... or browse to load local file:</li>
+    <!-- <li>... or browse to load local file:</li>
     <li><div class="jmolscript">load "?" ; frame 2</div></li>
-    <li>&nbsp;</li>
-    <li>2) Display either Electrostatic Potential or HOMO or LUMO mapped on molecular surface:</li>
-    <li><div class="jmolscript">isosurface id iso_mep  molecular map mep #ESP</div></li>
+    <li>&nbsp;</li> -->
+    <li>2) Display HOMO or LUMO mapped on molecular surface:</li>
+    <li><div class="jmolscript">mo homo</div></li>
+    <li><div class="jmolscript">mo lumo</div></li>
+    <!-- <li><div class="jmolscript">isosurface id iso_mep  molecular map mep #ESP</div></li>
     <li><div class="jmolscript">isosurface id iso_homo molecular map mo homo</div></li>
-    <li><div class="jmolscript">isosurface id iso_lumo molecular map mo lumo</div></li>
-    <li>&nbsp;</li>
+    <li><div class="jmolscript">isosurface id iso_lumo molecular map mo lumo</div></li> -->
+    <!-- <li>&nbsp;</li>
     <li>3) Set Isosurface to be tranlucent or opaque:</li>
     <li><div class="jmolscript">isosurface translucent 0.99 # translucent</div></li>
     <li><div class="jmolscript">isosurface translucent 0.75</div></li>
@@ -39,22 +54,13 @@
     <li>&nbsp;</li>
     <li>Delete Isosurface:</li> 
     <li><div class="jmolscript">isosurface delete</div></li>
-    <li>&nbsp;</li>
+    <li>&nbsp;</li> -->
   </ul>
-  </div>
-  <div id="jcmd-99"> <!-- Content of Tab Jmol Info -->
-    <div id="infodiv"></div>
   </div>
 </div>
 
 <!-- DIV in which Jmol Applet will be placed -->
 <div id='jmol_div'></div>
-
-
-<!-- 
-  The performance of loading and displaying the page is better
-  if JavaScripts are loaded at the bottom of the page.
- -->
 
 <!-- Load Jmol javascript library and jQuery UI: -->
 <script type="text/javascript" src="./jsmol/JSmol.min.js"></script>
