@@ -1,16 +1,17 @@
 /* Jmol div (applet) */
 #jmol_div{
-	height: 700px;
-	width:  700px;
+	height: 85vh;
+	width:  50vw;
 	float: right;
 	border: 1px solid black;
 }
 
 /* Tabbed box for Jmol-script commands */
 #commands{
-	width:	550px;
+	height: 85vh;
+	width:  40vw;
 	float:	left;
-	font-size: 90%;
+	/* font-size: 90%; */
 }
 
 /* format for Jmol-script commands */
@@ -20,17 +21,10 @@
 	cursor:		 pointer;
 }
 
-/* remove bullets from unodrered list (ul) */
-ul.nobullet{
-	padding-left: 0px;
-}
-li.nobullet{
-    list-style-type: none;
+label {
+	font: 1rem "Fira Sans", sans-serif;
 }
 
-/* Jmol Info box */ 
-#infodiv {
-    font-family: "Courier New", courier, monospace;
-    font-size: 55.0%;
-    width: 100%;
+input {
+	margin: 0.3rem;
 }

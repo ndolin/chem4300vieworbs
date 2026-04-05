@@ -42,10 +42,10 @@ var Info = {
 // jQuery ready functions
 // is called when page has been completely loaded
 $(document).ready(function() {
-    $("#jmol_div").html(Jmol.getAppletHtml(myJmol, Info))
+    $("#jmoldiv").html(Jmol.getAppletHtml(myJmol, Info))
 
     // append command box to <div id="jmol_div">
-    $("#jmol_div").append(Jmol.jmolCommandInput(myJmol, "command", "100%")); 
+    $("#jmoldiv").append(Jmol.jmolCommandInput(myJmol, "command", "100%")); 
 
     // make Jmol script commmands clickable (and execute the content of the <div>)
     $(".jmolscript").click(function(){

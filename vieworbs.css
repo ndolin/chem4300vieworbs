@@ -1,0 +1,64 @@
+header {
+  background-color: #830000;
+  border-top: 1rem solid;
+  border-top-color:rgb(124, 124, 124);
+  border-bottom: 1rem solid;
+  border-bottom-color:rgb(124, 124, 124);
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  line-height: 80%;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.funcs {
+  /* background-color: #ffffff;
+  border: 3px solid;
+  border-color: rgb(124, 124, 124); */
+  padding: 10px;
+  font-size: 16px;
+  text-align: left;
+  flex: 40%;
+  max-width: 40%;
+}
+
+.orbsviewer {
+  width: 100%;
+  height: 100%;
+  flex: 60%;
+  max-width: 60%;
+}
+
+#jmoldiv{
+	height: 500px;
+	width:  500px;
+	border: 1px solid black;
+}
+
+/* Make a one column-layout for screens <=600px wide */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+  .funcs {
+    max-width: 100%
+  }
+  .orbsviewer {
+    max-width: 100%
+  }
+  .classtitle {
+    line-height: 0%
+  }
+  .n2title {
+    line-height: 90%
+  }
+}
