@@ -18,7 +18,28 @@
 
 <div class="container">
     <div class="funcs">
-        <p>Hello there</p>
+        <p>
+        In the Python code, you defined a dinitrogen (N<sub>2</sub>) molecule and calculated its total energy and molecular orbital energies.
+        Although it wasn't printed out, the <code>mf.kernel()</code> function also computed the molecular orbitals using the given basis functions specified by <code>mol.basis</code>.
+        In this applet, you will visualize the molecular orbitals for the 3-21G basis set.
+        </p>
+
+        <label for="morb">Choose a molecular orbital: </label>
+        <select id="morb">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <button type="button" onclick="selectMO($('#morb').val())">View</button>
+        <div>
+            <button type="button" onclick="selectMO('previous')">-1</button>
+            <button type="button" onclick="selectMO('homo')">HOMO</button>
+            <button type="button" onclick="selectMO('lumo')">LUMO</button>
+            <button type="button" onclick="selectMO('next')">+1</button>
+        </div>
+        
     </div>
     <div class="orbsviewer" id="jmoldiv"></div>
 </div>

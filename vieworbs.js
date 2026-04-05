@@ -1,5 +1,6 @@
 function jmolReady(applet) {
-    Jmol.script(myJmol, 'set echo center; echo "Please select a file to visualize";' );
+    // Jmol.script(myJmol, 'set echo middle center; echo "Drag and drop a .molden file here to visualize.";' );
+    Jmol.script(myJmol, "load files mol/n2_321g.molden; rotate best; mo titleformat 'MO %I/%N | Energy = %E %U | Occupancy=%O'")
 }
 
 var myJmol = "myJmol";
@@ -13,12 +14,20 @@ var Info = {
     readyFunction: jmolReady,
 }
 
+function LoadMOs(mo) {
+    Jmol.script(myJmol, "load files " + mo)
+}
+
+function selectMO(num) {
+    // let e = $("#num").val();
+    Jmol.script(myJmol, 'mo ' + num)
+}
+
 $(document).ready(function() {
     $("#jmoldiv").html(Jmol.getAppletHtml(myJmol, Info));
 
     $("#jmoldiv").append(Jmol.jmolCommandInput(myJmol, "command", "100%")); 
-    // make Jmol script commmands clickable (and execute the content of the <div>)
-    // $(".jmolscript").click(function(){
-    //     Jmol.script(myJmol, this.innerHTML);
-    // });
+    $(".jmolscript").click(function(){
+        Jmol.script(myJmol, this.innerHTML);
+    });
 })
