@@ -12,45 +12,31 @@
 <body>
 
 <header>
-    <h2 class="classtitle">CHEM 4300: Homework 9</h2>
-    <h1 class="n2title">N<sub>2</sub> Molecular Orbital Visualization</h1>
+    <h2 class="classtitle">CHEM 4300 Homework</h2>
+    <h1 class="n2title">Molecular Orbital Visualization</h1>
 </header>
 
 <div class="container">
     <div class="funcs">
         <p>
-        In the Python code, you defined a dinitrogen (N<sub>2</sub>) molecule and calculated its total energy and molecular orbital energies.
+        In the Python code, you defined a molecule and calculated its total energy and molecular orbital energies.
         Although it wasn't printed out, the <code>mf.kernel()</code> function also computed the molecular orbitals using the given basis functions specified by <code>mol.basis</code>.
-        In this applet, you will visualize the molecular orbitals for the 3-21G basis set.
+        In this applet, you will visualize the molecular orbitals for the chosen molecule.
         </p>
+        
+        <button type="button" onclick="loadMOs('mol/n2_321g.molden'); createDropdown('morb', 18)">N<sub>2</sub></button>
+        <button type="button" onclick="loadMOs('mol/CP.molden'); createDropdown('morb', 55)">Cp<sup>-</sup></button>
 
-        <label for="morb">Choose a molecular orbital: </label>
+        <!-- <label for="morb">Choose a molecular orbital: </label> -->
         <select id="morb">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18">18</option>
+            <option id="default">Choose an MO</option>
         </select>
         <button type="button" onclick="selectMO($('#morb').val())">View</button>
         <div>
-            <button type="button" onclick="selectMO('previous')">-1</button>
-            <button type="button" onclick="selectMO('homo')">HOMO</button>
-            <button type="button" onclick="selectMO('lumo')">LUMO</button>
-            <button type="button" onclick="selectMO('next')">+1</button>
+            <button type="button" onclick="selectMO_updatenum('previous')">-1</button>
+            <button type="button" onclick="selectMO_updatenum('homo')">HOMO</button>
+            <button type="button" onclick="selectMO_updatenum('lumo')">LUMO</button>
+            <button type="button" onclick="selectMO_updatenum('next')">+1</button>
         </div>
         
     </div>
